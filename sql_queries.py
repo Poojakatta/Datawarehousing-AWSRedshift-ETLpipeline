@@ -47,12 +47,12 @@ userId        INTEGER)
 staging_songs_table_create = ("""
 CREATE TABLE IF NOT EXISTS staging_songs ( 
 num_songs        INTEGER,
-artist_id        VARCHAR NOT NULL SORTKEY DISTKEY,
+artist_id        VARCHAR SORTKEY DISTKEY,
 artist_latitude  VARCHAR,
 artist_longitude VARCHAR, 
 artist_location  VARCHAR, 
 artist_name      VARCHAR, 
-song_id          VARCHAR NOT NULL, 
+song_id          VARCHAR, 
 title            VARCHAR,
 duration         FLOAT, 
 year             INTEGER)
@@ -147,7 +147,7 @@ INSERT INTO songplay_table (start_time,
             se.userAgent                AS user_agent
     FROM staging_events AS se
     JOIN staging_songs AS ss
-        ON (se.artist = ss.artist_name)
+        ON (se.artist = ss.artist_name AND se.song = ss.title)
     WHERE se.page = 'NextSong';
 """)
 
