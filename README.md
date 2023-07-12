@@ -100,5 +100,5 @@ _start_time, hour, day, week, month, year, weekday_
 1. Create an IAM role Administrator access and note the key and secret.
 2. Set up the AWS Redshift cluster and assign roles so that it can access data from S3 bucket using `AWS environment setup.ipynb` file.
 3. Get IAM ARN and cluster end points and fill in the details in `dwh.cfg` file.
-4. Run the `run.ipynb` file which first runs create_tables.py to create all required tables followed by etl.py to load the data into Redshift cluster.
+4. Run the `run.ipynb` file which first runs `create_tables.py` to create all required tables followed by `etl.py` to load the data into Redshift cluster.
 5. Now using `test.ipynb` connect back to cluster and run few commands to test if the data is loaded into cluster correctly.
