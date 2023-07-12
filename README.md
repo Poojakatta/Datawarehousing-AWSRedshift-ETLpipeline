@@ -78,7 +78,7 @@ artist_id, name, location, lattitude, longitude
 _start_time, hour, day, week, month, year, weekday_
 
 
-### The project template includes four files:
+### The project template includes files:
 
 `create_table.py` - is where you'll create your fact and dimension tables for the star schema in Redshift.
 
