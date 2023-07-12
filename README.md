@@ -78,6 +78,23 @@ artist_id, name, location, lattitude, longitude
 _start_time, hour, day, week, month, year, weekday_
 
 
+### The project template includes four files:
+
+`create_table.py` - is where you'll create your fact and dimension tables for the star schema in Redshift.
+
+`etl.py` - is where you'll load data from S3 into staging tables on Redshift and then process that data into your analytics tables on Redshift.
+
+`sql_queries.py` - is where you'll define you SQL statements, which will be imported into the two other files above.
+
+`dwh.cfg` - is where you add your configurations varibles.
+
+`AWS environment setup.ipynb` - is where you can create IAM roles, Redshift clusters.
+
+`run.ipynb` - is where we run the program to drop the exisitng and create new tables.
+
+`test.ipynb`- is where we connect to cluster after ETL process is complete and check if the data is loaded properly.
+
+
 ## Steps to run the project
 
 1. Create an IAM role Administrator access and note the key and secret.
