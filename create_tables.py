@@ -4,12 +4,40 @@ from sql_queries import create_table_queries, drop_table_queries
 
 
 def drop_tables(cur, conn):
+    """
+    Docstring for the `drop_tables` function.
+
+    This function drops all tables in the database.
+
+    Args:
+        cur: The cursor object.
+        conn: The connection object.
+
+    Returns:
+        None.
+
+    Raises:
+        Any exceptions raised by the `cur.execute()` or `conn.commit()` methods.
+    """
     for query in drop_table_queries:
         cur.execute(query)
         conn.commit()
 
 
 def create_tables(cur, conn):
+    """
+    Create tables in the database.
+
+    Args:
+        cur: The cursor object.
+        conn: The connection object.
+
+    Returns:
+        None.
+
+    Raises:
+        Any exceptions raised by the `cur.execute()` or `conn.commit()` methods.
+    """
     for query in create_table_queries:        
         cur.execute(query)
         conn.commit()
